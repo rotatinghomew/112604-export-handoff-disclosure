@@ -10,3 +10,6 @@ coverage/
 __pycache__/
 *.py[cod]
 .DS_Store
+
+# 本地交付服务运行状态（重启对账用，不提交）
+runtime/
