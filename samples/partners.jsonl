@@ -1,0 +1,4 @@
+{"partner": "B1", "region": "R-East", "allowed": ["phone", "drop_zone", "relay"], "proxy_only": false, "delegate_of": ""}
+{"partner": "B1a", "region": "R-East", "allowed": ["drop_zone"], "proxy_only": false, "delegate_of": "B1"}
+{"partner": "B2", "region": "R-East", "allowed": ["drop_zone", "relay"], "proxy_only": false, "delegate_of": ""}
+{"partner": "B3", "region": "R-Relay", "allowed": ["phone", "drop_zone", "relay"], "proxy_only": true, "delegate_of": ""}

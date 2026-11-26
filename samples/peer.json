@@ -1,0 +1,58 @@
+[
+  [
+    "POST",
+    "/disclosures",
+    {
+      "ref": "D-3",
+      "grant": "G-3",
+      "fields": {
+        "phone": "+1-202-555-0103"
+      }
+    },
+    [
+      [
+        200,
+        {
+          "ref": "D-3",
+          "status": "active",
+          "received_fields": [
+            "phone"
+          ]
+        }
+      ]
+    ]
+  ],
+  [
+    "POST",
+    "/disclosures/D-3/stop",
+    {},
+    [
+      [
+        0,
+        {}
+      ]
+    ]
+  ],
+  [
+    "GET",
+    "/disclosures/D-3",
+    null,
+    [
+      [
+        200,
+        {
+          "ref": "D-3",
+          "status": "stop_pending"
+        }
+      ],
+      [
+        200,
+        {
+          "ref": "D-3",
+          "status": "stopped",
+          "evidence": "S4"
+        }
+      ]
+    ]
+  ]
+]

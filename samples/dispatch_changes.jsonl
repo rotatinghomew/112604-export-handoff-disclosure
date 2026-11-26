@@ -1,0 +1,4 @@
+{"event": "M-1", "order": "X3", "grant": "G-3", "partner": "B1", "action": "assign", "at": "2026-11-27T00:30:00Z"}
+{"event": "M-2", "order": "X3", "grant": "G-3A", "partner": "B1a", "action": "delegate", "at": "2026-11-27T01:00:00Z"}
+{"event": "M-3", "order": "X3", "grant": "G-3", "partner": "B1", "action": "end", "at": "2026-11-27T02:00:00Z"}
+{"event": "M-4", "order": "X3", "grant": "G-4", "partner": "B2", "action": "assign", "at": "2026-11-27T02:00:00Z"}

@@ -1,0 +1,120 @@
+{
+  "feeds": {
+    "deliveries": {
+      "key": [
+        "order"
+      ],
+      "fields": {
+        "order": "string",
+        "region": "string",
+        "recipient": "string",
+        "purpose": "string",
+        "choice": "list",
+        "until": "time",
+        "contact_ref": "string"
+      },
+      "note": "recipient 和 contact_ref 均为人工合成引用。choice 指订单许可资料字段。"
+    },
+    "partners": {
+      "key": [
+        "partner",
+        "region"
+      ],
+      "fields": {
+        "partner": "string",
+        "region": "string",
+        "allowed": "list",
+        "proxy_only": "bool",
+        "delegate_of": "string"
+      },
+      "note": "proxy_only 有效时，该地区委托只允许项目提供的转接引用。delegate_of 为空表示直接签约。"
+    },
+    "proofs": {
+      "key": [
+        "receipt"
+      ],
+      "fields": {
+        "receipt": "string",
+        "order": "string",
+        "grant": "string",
+        "partner": "string",
+        "delivered_at": "time",
+        "received_at": "time",
+        "evidence": "string"
+      },
+      "note": "证据地址仅为本地资料引用。签收发生与上传是不同时间。"
+    },
+    "contacts": {
+      "key": [
+        "contact_ref"
+      ],
+      "fields": {
+        "contact_ref": "string",
+        "phone": "string",
+        "drop_zone": "string",
+        "relay": "string"
+      },
+      "note": "为仓内联调的合成收货地址缩写及保留号段，禁止连接实际个人资料。"
+    },
+    "dispatch_changes": {
+      "key": [
+        "event"
+      ],
+      "fields": {
+        "event": "string",
+        "order": "string",
+        "grant": "string",
+        "partner": "string",
+        "action": "string",
+        "at": "time"
+      },
+      "note": "订单交接记录，action 为 assign、end 或 delegate。订舱联系人不是委托编号。"
+    }
+  },
+  "references": [
+    [
+      "proofs",
+      [
+        "order"
+      ],
+      "deliveries",
+      [
+        "order"
+      ]
+    ],
+    [
+      "proofs",
+      [
+        "partner"
+      ],
+      "partners",
+      [
+        "partner"
+      ]
+    ],
+    [
+      "deliveries",
+      [
+        "contact_ref"
+      ],
+      "contacts",
+      [
+        "contact_ref"
+      ]
+    ],
+    [
+      "proofs",
+      [
+        "order",
+        "grant",
+        "partner"
+      ],
+      "dispatch_changes",
+      [
+        "order",
+        "grant",
+        "partner"
+      ]
+    ]
+  ]
+}
